@@ -528,5 +528,5 @@ This project is licensed under the MIT License.
 </p>
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/harish00506">harish00506</a>
+  Made with ❤️ by <a href="https://github.com/vickyvikas-L">Vikas L</a>
 </p>
