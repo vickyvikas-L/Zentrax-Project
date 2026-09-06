@@ -1,0 +1,63 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# PyInstaller
+*.spec.bak
+*.manifest
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific
+ZENTRAX_FULL_DOCUMENTATION.txt
+PyWhatKit_DB.txt
+*.wav
+*.mp3
+screenshots/
+recordings/
+
+# Whisper models (large files)
+*.pt
+
+# Training/model artifacts (too large for normal Git)
+models/zentrax-merged/
+models/zentrax-smollm2/checkpoint-*/
+models/zentrax-smollm2/final/
+data/zentrax_train.jsonl
+
+# Python caches inside source
+src/**/__pycache__/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak

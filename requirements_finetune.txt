@@ -1,0 +1,26 @@
+# Fine-Tuning Requirements for Zentrax LLM
+# Install with: pip install -r requirements_finetune.txt
+
+# Core ML Libraries
+torch>=2.0.0
+transformers>=4.36.0
+datasets>=2.14.0
+
+# Parameter Efficient Fine-Tuning
+peft>=0.7.0
+trl>=0.7.0
+
+# Optimization & Quantization
+accelerate>=0.25.0
+bitsandbytes>=0.41.0  # For 4-bit quantization (GPU only)
+
+# Utilities
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# Optional: For GGUF export (Ollama)
+# llama-cpp-python>=0.2.0
+
+# Optional: For monitoring
+# wandb>=0.15.0
+# tensorboard>=2.14.0

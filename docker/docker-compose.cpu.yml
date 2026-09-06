@@ -1,0 +1,40 @@
+version: '3.8'
+
+# CPU-only version (no NVIDIA GPU required)
+services:
+  # Ollama LLM Service
+  ollama:
+    image: ollama/ollama:latest
+    container_name: zentrax-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    # No GPU configuration for CPU-only systems
+
+  # Model initializer - pulls SmolLM2 model on startup
+  ollama-init:
+    image: ollama/ollama:latest
+    container_name: zentrax-ollama-init
+    depends_on:
+      - ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=ollama:11434
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "Waiting for Ollama to start..."
+        sleep 15
+        echo "Pulling SmolLM2 model (CPU mode)..."
+        ollama pull smollm2
+        echo "Model ready!"
+    restart: "no"
+
+volumes:
+  ollama_data:
+    name: zentrax-ollama-data

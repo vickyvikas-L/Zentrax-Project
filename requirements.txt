@@ -1,0 +1,33 @@
+# Speech Recognition
+openai-whisper
+SpeechRecognition
+pyaudio
+sounddevice  # Fallback audio capture
+
+# Zentrax Voice Assistant
+pyttsx3
+
+# Deep Learning
+torch
+torchaudio
+
+# Computer Vision
+opencv-python
+mediapipe<1.0.0
+
+# Automation
+pyautogui
+pywhatkit
+
+# Utilities
+numpy
+requests
+psutil  # System monitoring (CPU, RAM, Battery)
+colorama  # Colored terminal output
+
+# Web UI
+websockets
+pygame
+
+# Windows Automation
+pywin32  # Advanced window management

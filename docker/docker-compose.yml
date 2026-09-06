@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Ollama LLM Service
+  ollama:
+    image: ollama/ollama:latest
+    container_name: zentrax-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    # Remove 'deploy' section above if you don't have NVIDIA GPU
+
+  # Model initializer - pulls SmolLM2 model on startup
+  ollama-init:
+    image: ollama/ollama:latest
+    container_name: zentrax-ollama-init
+    depends_on:
+      - ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "Waiting for Ollama to start..."
+        sleep 10
+        echo "Pulling SmolLM2 model..."
+        ollama pull smollm2
+        echo "Model ready!"
+    restart: "no"
+
+  # Optional: Zentrax app in container
+  # zentrax:
+  #   build: .
+  #   container_name: zentrax-app
+  #   depends_on:
+  #     - ollama
+  #   environment:
+  #     - OLLAMA_HOST=ollama
+  #     - OLLAMA_PORT=11434
+  #   devices:
+  #     - /dev/video0:/dev/video0  # Camera access
+  #   volumes:
+  #     - /tmp/.X11-unix:/tmp/.X11-unix  # Display access
+  #   network_mode: host
+
+volumes:
+  ollama_data:
+    driver: local
