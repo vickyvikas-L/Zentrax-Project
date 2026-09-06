@@ -74,7 +74,7 @@
 
 ```powershell
 # Clone and setup
-git clone https://github.com/harish00506/Zentrax.git
+git clone https://github.com/vickyvikas-L/Zentrax.git
 cd Zentrax
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
