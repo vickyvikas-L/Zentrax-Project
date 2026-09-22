@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker" alt="Docker">
 </p>
 
-<p align="center">
+<p align="center"> 
   <strong>"Good morning. What would you like me to do today?"</strong>
 </p>
 
