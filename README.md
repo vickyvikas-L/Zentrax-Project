@@ -1,4 +1,4 @@
-# 🤖 Zentrax — AI-Powered Voice & Gesture Desktop Controller   
+# 🤖 Zentrax — AI-Powered Voice & Gesture Desktop Controller    
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python" alt="Python">
