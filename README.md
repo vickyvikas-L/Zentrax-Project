@@ -9,7 +9,7 @@
 </p>
 
 <p align="center"> 
-  <strong>"Good morning. What would you like me to do today?"</strong>
+  <strong>"Good morning. What would you like me to do today?"</strong> 
 </p>
 
 **Zentrax** is your personal AI assistant inspired by Iron Man's FRIDAY. It controls your entire Windows PC using natural voice commands and hand gestures. Just say "Hey Zentrax" and speak naturally - Zentrax will understand and execute your commands, responding with a friendly voice!
